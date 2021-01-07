@@ -13,6 +13,7 @@ dependencies:
   - traitlets>=4.3.1
   - ipython
   - vdom
+  - jupyterlab=2.0.0
   - jupyterlab_launcher>=0.5.0
   # Holoviews
   - pyviz::holoviews=1.13.2
