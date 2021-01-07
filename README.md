@@ -1,3 +1,5 @@
+https://gesis.mybinder.org/binder/v2/gh/jacobmontiel/river-tutorial-ijcai2020/95eb8517da62772deb2e456a18d993da6b2fcb88
+
 # Welcome
 
 This repository contains the notebooks for the "Machine learning for data streams with scikit-multiflow" tutorial for the IJCAI-PRICAI 2020 conference.
