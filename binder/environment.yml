@@ -15,4 +15,5 @@ dependencies:
   - holoviews
   - panel
   - streamz
-  - git+https://github.com/online-ml/river.git
+  - pip:
+    - git+https://github.com/online-ml/river.git
