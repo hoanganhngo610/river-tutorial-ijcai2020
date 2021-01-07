@@ -26,5 +26,6 @@ dependencies:
   - nodejs
   - bokeh
   - streamz
+  - graphviz
   - pip:
     - git+https://github.com/online-ml/river.git
