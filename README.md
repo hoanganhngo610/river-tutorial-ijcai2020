@@ -1,4 +1,4 @@
-https://gesis.mybinder.org/binder/v2/gh/jacobmontiel/river-tutorial-ijcai2020/95eb8517da62772deb2e456a18d993da6b2fcb88
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jacobmontiel/river-tutorial-ijcai2020/HEAD?urlpath=lab/tree/demo-river.ipynb)
 
 # Welcome
 
