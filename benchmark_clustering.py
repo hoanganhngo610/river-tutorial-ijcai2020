@@ -24,11 +24,11 @@ def benchmark_clustering(models,
     # load dataset, check final feature and create stream
     data = pd.read_csv(dataset_name+".csv", nrows=n_samples)
     if data.columns[-1] == 'class':
-        features = data.columns[-2]
-        stream = stream.iter_pandas(X=data[features], y=data["class"])
+        features = data.columns[:-2]
+        data_stream = stream.iter_pandas(X=data[features], y=data["class"])
     else:
         features = data.columns # no ground truth
-        stream = stream.iter_pandas(X=data[features])
+        data_stream = stream.iter_pandas(X=data[features])
 
     if (('river.metrics.cluster' not in metric.__module__) and (data.columns[-1] != 'class')):
         raise Exception('The dataset and metric used are not compatible. \n' 
@@ -50,7 +50,7 @@ def benchmark_clustering(models,
     score_array = [deque() for _ in range(n_models)]
 
     # loop function to update all models
-    for i, (x, y_true) in enumerate(stream):
+    for i, (x, y_true) in enumerate(data_stream):
         for nth_model in range(n_models):
             start = time.perf_counter()
             models[nth_model].learn_one(x)
