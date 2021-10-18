@@ -50,8 +50,8 @@ def benchmark_clustering(models,
     score_array = [deque() for _ in range(n_models)]
 
     # loop function to update all models
-    for nth_model in range(n_models):
-        for i, (x, y_true) in enumerate(stream):
+    for i, (x, y_true) in enumerate(stream):
+        for nth_model in range(n_models):
             start = time.perf_counter()
             models[nth_model].learn_one(x)
             y_pred = models[nth_model].predict_one(x)
@@ -87,22 +87,22 @@ def benchmark_clustering(models,
     
     # first subplot
     for i in range(n_models):
-        axes[0].plot(df.index, df[:, 3*i], label = models_names[i])
+        axes[0].plot(df.index, df.iloc[:, 3*i], label = models_names[i])
     axes[0].set_ylabel(metric_name)
     axes[0].grid(linestyle=':')
     axes[0].legend()
     
     # second subplot
     for i in range(n_models):
-        axes[1].plot(df.index, df[:, 3*i+1], label=models_names[i])
+        axes[1].plot(df.index, df.iloc[:, 3*i+1], label=models_names[i])
     axes[1].set_ylabel('Time (s)')
     axes[1].grid(linestyle=':')
     axes[1].legend()
     
     # third subplot
     for i in range(n_models):
-        axes[2].plot(df.index, df[:, 3*i+2], label=models_names[i])
-    axes[2].set_ylabel()
+        axes[2].plot(df.index, df.iloc[:, 3*i+2], label=models_names[i])
+    axes[2].set_ylabel('Memory (bytes)')
     axes[2].grid(linestyle=':')
     axes[2].legend()
     
